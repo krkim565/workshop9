@@ -1,0 +1,9 @@
+1. Whats the difference between Django, Flask, and Ruby on Rails?
+Django helps keep code simple and non-repeating, but it has a steep learning curve, 
+whereas Flask is much easier to pickup and is a lightweight framework. Ruby on Rails is
+different from Django and Flask because it follows a MVC architecture, but it is similar 
+to Flask in that it is beginner-friendly.
+2. When might you use each of those frameworks?
+If your app does not require a SQL database, then you can use Flask. Flask can also be 
+used for smaller and less complicated apps. Whereas Django can be used for bigger apps.
+Ruby on Rails can be used when your app is not super complicated.

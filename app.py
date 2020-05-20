@@ -3,22 +3,28 @@ import db
 import requests
 import json
 
+# you'll need this
+ROOT_URL = 'https://www.googleapis.com/books/v1/volumes'
+params = {'maxResults': 40}
+
+
 app = Flask(__name__)
 
-requests.get(url, params=params)
+requests.get(ROOT_URL, params=params)
 
-API_KEY = AIzaSyAmzlWTj4no1foPhlfUjBKxUwqQgPv8V6w
 
 def search_title(name):
    name = '+'.join(name.split(' '))
    r = requests.get(ROOT_URL + '?q=' + name + '&key=' + API_KEY, params=params)
    return r.json()['items']
 
-favBook = search_title("The Hunger Games")
+global results
 
-@app.route(‘/hello’, methods=['GET', 'POST'])
-def hello_world():
-   return ‘hello world’
+results = "The Hunger Games"
+
+# @app.route(‘/hello’, methods=['GET', 'POST'])
+# def hello_world():
+#    return ‘hello world’
 
 @app.route('/', methods=['GET', 'POST'])
 def home_page():
@@ -46,4 +52,5 @@ def delete(id):
    return ('', 204)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug = True)
+
